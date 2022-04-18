@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-419-x-mtfrom-en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Google Developers</title>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="iframe" content="standalone">
+    
+    
+    <script src="signin_custom_data/cbgapi.loaded_1" nonce="Exk1FXwf/WL1lJI3WvUZYraFhLrDjy" async=""></script><script src="signin_custom_data/cbgapi.loaded_0" nonce="Exk1FXwf/WL1lJI3WvUZYraFhLrDjy" async=""></script><script async="" src="app_loader.js"></script><script nonce="Exk1FXwf/WL1lJI3WvUZYraFhLrDjy">
+      (function(){
+        window.framebox=window.framebox||function(){(window.framebox.q=window.framebox.q||[]).push(arguments)};
+        
+        var a={},b=function(){(window.framebox.dq=window.framebox.dq||[]).push(arguments)};
+        ['getUrl','handleLinkClicksInParent','initAutoSize','navigate','pushState','replaceState',
+         'requestQueryAndFragment','sendEvent','updateSize'].forEach(function(x){a[x]=function(){
+          b(x,arguments)}});
+        window.devsite={framebox:{AutoSizeClient:a}};
+      })();
+      
+      (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+        t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+        E.parentNode.insertBefore(t,E);})(window, document, 'script',
+        'https://www.gstatic.com/devrel-devsite/prod/v3e5e49c86560fa1d4115a3867ece7b214786f7f53a4ea5df16ed22c32fc83928/developers/js/app_loader.js', '[1,"es",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v3e5e49c86560fa1d4115a3867ece7b214786f7f53a4ea5df16ed22c32fc83928","https://www.gstatic.com/devrel-devsite/prod/v3e5e49c86560fa1d4115a3867ece7b214786f7f53a4ea5df16ed22c32fc83928/developers","https://developers-dot-devsite-v2-prod.appspot.com",null,1,null,1,null,[1,6,8,12,14,17,18,21,25,40,50,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,111,112,113,115,117,118,120,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,138,140,141,144,147,148,149,150,151,152,153,154,155,156,157,159,161,163,164,165,168,169,170,173,179,182,186,191],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","developers.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY"]')
+      
+      </script>
+    
+      <link rel="alternate machine-translated-from" hreflang="en" href="https://developers-dot-devsite-v2-prod.appspot.com/identity/sign-in/web/demos/signin_custom?hl=en">
+    
+  <script src="devsite_app_module__es.js" nonce="Exk1FXwf/WL1lJI3WvUZYraFhLrDjy"></script></head>
+  
+  <body ready="">
+    <!-- [START pre-client_id] --><link href="signin_custom_data/css.css" rel="stylesheet" type="text/css"><script src="signin_custom_data/apiclient.js" gapi_processed="true"></script><script>
+  var googleUser = {};
+  var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+<!-- [END pre-client_id] -->
+        client_id: '351360855136-c65vr13tal2in9b9m1hdmp5dgr4rie3l.apps.googleusercontent.com',
+<!-- [START post-client_id] -->
+        cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      attachSignin(document.getElementById('customBtn'));
+    });
+  };
+
+  function attachSignin(element) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+          document.getElementById('name').innerText = "Signed in: " +
+              googleUser.getBasicProfile().getName();
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+  </script><style type="text/css">
+    #customBtn {
+      display: inline-block;
+      background: white;
+      color: #444;
+      width: 190px;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }
+    span.label {
+      font-family: serif;
+      font-weight: normal;
+    }
+    span.icon {
+      background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+    span.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 42px;
+      padding-right: 42px;
+      font-size: 14px;
+      font-weight: bold;
+      /* Use the Roboto font that is loaded in the <head> */
+      font-family: 'Roboto', sans-serif;
+    }
+  </style><!-- In the callback, you would hide the gSignInWrapper element on a
+  successful sign in --><div id="gSignInWrapper"> <span class="label">Inicia sesión con:</span><div id="customBtn" class="customGPlusSignIn"><span class="icon"></span> <span class="buttonText">Google</span> </div></div><div id="name"></div><script>startApp();</script>
+
+  
+<iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin allow-storage-access-by-user-activation" style="position: absolute; width: 1px; height: 1px; inset: -9999px; display: none;" aria-hidden="true" frame-border="0" src="signin_custom_data/iframe.htm"></iframe></body></html>
+<!-- [END post-client_id] -->
